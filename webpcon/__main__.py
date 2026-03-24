@@ -1,4 +1,4 @@
-from .converter import Converter
+from .converter import Converter, Format
 from .cli import CLI
 
 
@@ -7,6 +7,6 @@ if __name__ != "__main__":
 
 def main():
     cli = CLI()
-    Converter.convert(cli.args.input_file, cli.args.output_file, cli.args.format)
+    Converter.convert(cli.args.input_file, cli.args.output_file, Format[cli.args.format])
 
 main()

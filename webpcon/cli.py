@@ -4,7 +4,10 @@ from enum import Enum, unique
 
 class CLI(object):
     def __init__(self):
-        self.parser = argparse.ArgumentParser(prog="webpcon", description="Converts webp files to either JPG or PNG.")
+        self.parser = argparse.ArgumentParser(
+                prog="webpcon",
+                description="Converts webp files to either JPG or PNG.",
+                epilog="Copyright © Techi-Freki")
         self._load_args()
         self.args = self.parser.parse_args()
 
