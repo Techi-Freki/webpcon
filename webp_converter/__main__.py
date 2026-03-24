@@ -1,5 +1,5 @@
 import argparse
-from . import Converter
+from .converter import Converter
 
 
 if __name__ != "__main__":
@@ -7,3 +7,5 @@ if __name__ != "__main__":
 
 def main():
     pass
+
+main()
