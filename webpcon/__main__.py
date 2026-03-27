@@ -2,7 +2,7 @@ from .converter import Converter, Format
 from .cli import CLI
 
 
-if __name__ != "__main__":
+if __name__ != '__main__':
     pass
 
 def main():
