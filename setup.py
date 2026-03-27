@@ -11,7 +11,7 @@ with open(f'{working_dir}/README.md', 'r') as readme:
 with open(f'{working_dir}/VERSION', 'r') as version:
     VERSION = version.readline()
 
-with open(f'{working_dir}/requirements.txt') as requirements:
+with open(f'{working_dir}/requirements.txt', 'r') as requirements:
     REQUIREMENTS = requirements.readlines()
 
 setup(
