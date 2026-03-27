@@ -5,7 +5,7 @@ from setuptools import setup, find_packages
 
 working_dir = os.getcwd()
 
-with open(f"{working_dir}/README.md", "r") as readme:
+with open(f'{working_dir}/README.md', 'r') as readme:
     README = readme.read()
 
 with open(f'{working_dir}/VERSION', 'r') as version:
@@ -18,7 +18,7 @@ setup(
     name='webpcon',
     version=VERSION,
     packages=find_packages(),
-    url='https://github.com/Techi-Freki/webp_converter',
+    url='https://github.com/Techi-Freki/webpcon',
     license='MIT',
     author='Techi-Freki',
     description='Converts a webp into either a JPG or PNG',

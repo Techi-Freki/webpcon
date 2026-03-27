@@ -16,4 +16,4 @@ classifiers = [
 ]
 
 [project.urls]
-Repository = "https://github.com/Techi-Freki/webp_converter.git"
+Repository = "https://github.com/Techi-Freki/webpcon.git"
