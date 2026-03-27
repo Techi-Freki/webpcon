@@ -1,5 +1,4 @@
 import argparse
-from enum import Enum, unique
 
 
 class CLI(object):
