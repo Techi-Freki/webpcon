@@ -2,7 +2,7 @@
 name = "webpcon"
 description = "Converts webp to either PNG or JPG."
 requires-python = ">= 3.8"
-dynamic = ["VERSION"]
+dynamic = ["version"]
 dependencies = ["pillow"]
 authors = [ {name = "Techi-Freki", email = "techifreki@proton.me"} ]
 maintainers = [ {name = "Techi-Freki", email = "techifreki@proton.me"} ]
@@ -10,7 +10,7 @@ readme = "README.md"
 license = "MIT"
 license-files = [ "LICENSE" ]
 classifiers = [
-"Development Status :: 4 - Beta",
+"Development Status :: 5 - Production/Stable",
 "Intended Audience :: Developers",
 "Programming Language :: Python :: 3.8"
 ]

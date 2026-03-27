@@ -1,2 +1,5 @@
-# webp_converter
-Convert webp images to jpg.
+# webpcon
+Convert webp images to JPG or PNG.
+
+## Usage
+webpcon input_file output_file ["PNG", "JPG"] (defaults to PNG).
