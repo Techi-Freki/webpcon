@@ -1,6 +1,7 @@
 import unittest
 
 from pathlib import Path
+from PIL import Image
 from ..converter import Converter, Format
 
 
@@ -14,8 +15,8 @@ test_webp_jpg = 'test-webp.jpg'
 class ConverterTestCase(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        with open(test_webp, 'w') as f:
-            pass
+        img = Image.new('CMYK', (100, 100))
+        img.save(test_webp, 'webp')
 
     @classmethod
     def tearDownClass(cls):
@@ -25,9 +26,9 @@ class ConverterTestCase(unittest.TestCase):
 
     def test_convert(self):
         self.assertRaises(FileNotFoundError,
-                          lambda:Converter.convert(fail_webp, fail_webp_jpg, Format.JPG))
+                          lambda:Converter.convert(fail_webp, fail_webp_jpg, Format.JPEG))
         self.assertTrue(Path(test_webp).exists())
         Converter.convert(test_webp, test_webp_png)
         self.assertTrue(Path(test_webp_png).exists())
-        Converter.convert(test_webp, test_webp_jpg, file_format=Format.JPG)
+        Converter.convert(test_webp, test_webp_jpg, file_format=Format.JPEG)
         self.assertTrue(Path(test_webp_jpg).exists())

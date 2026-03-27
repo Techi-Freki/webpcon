@@ -1,6 +1,6 @@
 import unittest
 
-from .ConverterTests import ConverterTestCase
+from webpcon.tests.ConverterTests import ConverterTestCase
 
 
 def run_suite():

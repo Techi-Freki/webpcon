@@ -6,7 +6,7 @@ from PIL import Image
 
 @unique
 class Format(Enum):
-    JPG = 0
+    JPEG = 0
     PNG = 1
 
 class Converter(object):
