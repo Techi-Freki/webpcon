@@ -12,8 +12,11 @@ class Format(Enum):
 class Converter(object):
     @staticmethod
     def convert(input_file:str, output_file:str, file_format:Format=Format.PNG):
+        err = 'Error converting the image: {}'
         if not os.path.exists(input_file):
-            raise FileNotFoundError(f'{input_file} does not exist.')
+            no_file = f'{input_file} does not exist.'
+            print(err.format(no_file))
+            raise FileNotFoundError(err.format(no_file))
 
         try:
 
@@ -23,5 +26,6 @@ class Converter(object):
 
                 img.save(output_file, file_format.name, quality=85)
                 print(f'File successfully converted, file saved to {output_file}.')
-        except IOError as e:
-            print(f'Error converting file: {e}')
+        except Exception as e:
+            print(err.format(e) + '.')
+            raise IOError(e)
