@@ -34,11 +34,15 @@ class ConverterTestCase(unittest.TestCase):
         self.assertTrue(Path(test_webp).exists())
         Converter.convert(test_webp, test_webp_png)
         self.assertTrue(Path(test_webp_png).exists())
+        with Image.open(test_webp_png) as img:
+            self.assertTrue(img.mode == 'RGB')
 
     def test_convert_success_jpg(self):
         self.assertTrue(Path(test_webp).exists())
         Converter.convert(test_webp, test_webp_jpg, Format.JPEG)
         self.assertTrue(Path(test_webp_jpg).exists())
+        with Image.open(test_webp_jpg) as img:
+            self.assertTrue(img.mode == 'RGB')
 
     def test_convert_fail_FileNotFound(self):
         self.assertRaises(FileNotFoundError,

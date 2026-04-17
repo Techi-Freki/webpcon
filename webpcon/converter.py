@@ -19,7 +19,6 @@ class Converter(object):
             raise FileNotFoundError(err.format(no_file))
 
         try:
-
             with Image.open(input_file) as img:
                 if img.mode == 'CMYK':
                     img.convert('RGB')
