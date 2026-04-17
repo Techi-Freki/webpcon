@@ -17,3 +17,7 @@ classifiers = [
 
 [project.urls]
 Repository = "https://github.com/Techi-Freki/webpcon.git"
+
+[tool.coverage.run]
+branch = true
+omit = [ "*/tests/*.py" ]
