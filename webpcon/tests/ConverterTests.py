@@ -24,26 +24,33 @@ class ConverterTestCase(unittest.TestCase):
 
     @classmethod
     def tearDownClass(cls):
-        Path(test_webp).unlink(missing_ok=True)
-        Path(test_webp_png).unlink(missing_ok=True)
-        Path(test_webp_jpg).unlink(missing_ok=True)
-        Path(fail_io_webp).unlink(missing_ok=True)
+        parm = { 'missing_ok': True }
+        Path(test_webp).unlink(**parm)
+        Path(test_webp_png).unlink(**parm)
+        Path(test_webp_jpg).unlink(**parm)
+        Path(fail_io_webp).unlink(**parm)
 
-    def test_convert(self):
+    def test_convert_success_png(self):
+        self.assertTrue(Path(test_webp).exists())
+        Converter.convert(test_webp, test_webp_png)
+        self.assertTrue(Path(test_webp_png).exists())
+
+    def test_convert_success_jpg(self):
+        self.assertTrue(Path(test_webp).exists())
+        Converter.convert(test_webp, test_webp_jpg, Format.JPEG)
+        self.assertTrue(Path(test_webp_jpg).exists())
+
+    def test_convert_fail_FileNotFound(self):
         self.assertRaises(FileNotFoundError,
                           lambda:Converter.convert(
                               fail_webp,
                               fail_webp_jpg,
                               Format.JPEG
                           ))
+
+    def test_convert_fail_IOError(self):
         self.assertRaises(IOError,
                           lambda:Converter.convert(
                               fail_io_webp,
                               fail_io_png
                           ))
-
-        self.assertTrue(Path(test_webp).exists())
-        Converter.convert(test_webp, test_webp_png)
-        self.assertTrue(Path(test_webp_png).exists())
-        Converter.convert(test_webp, test_webp_jpg, file_format=Format.JPEG)
-        self.assertTrue(Path(test_webp_jpg).exists())
