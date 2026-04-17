@@ -2,8 +2,7 @@
 name = "webpcon"
 description = "Converts webp to either PNG or JPG."
 requires-python = ">= 3.8"
-dynamic = ["version"]
-dependencies = ["pillow"]
+dynamic = ["version", "dependencies"]
 authors = [ {name = "Techi-Freki", email = "techifreki@proton.me"} ]
 maintainers = [ {name = "Techi-Freki", email = "techifreki@proton.me"} ]
 readme = "README.md"
@@ -19,5 +18,7 @@ classifiers = [
 Repository = "https://github.com/Techi-Freki/webpcon.git"
 
 [tool.coverage.run]
-branch = true
 omit = [ "*/tests/*.py" ]
+
+[tool.hatch.metadata.hooks.requirements_txt]
+files = [ "requirements.txt" ]
